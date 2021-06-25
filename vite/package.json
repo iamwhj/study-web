@@ -1,0 +1,19 @@
+{
+  "name": "koa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@vue/compiler-dom": "^3.1.2",
+    "@vue/compiler-sfc": "^3.1.2",
+    "koa": "^2.13.1",
+    "vue": "3.1.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
