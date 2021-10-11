@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="chat">
+    <button class="btn">send</button>
+
+    <ul class="showBox"></ul>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        let btn = document.querySelector('.btn')
+        let chat = document.querySelector('.chat')
+
+        let ulElement = document.querySelector('.showBox')
+
+        let socket = io('ws://localhost:3000')
+
+        btn.onclick = function () {
+            socket.emit('data', {
+                data: chat.value
+            })
+        }
+
+        socket.on('message', e => {
+            let li = document.createElement('li')
+            let str = `${e.id}说：${e.data} time: ${e.nowTime}`
+            li.innerHTML = str
+            ulElement.appendChild(li)
+        })
+    </script>
+</body>
+</html>
