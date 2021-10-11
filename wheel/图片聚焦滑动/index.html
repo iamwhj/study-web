@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body {
+            margin: 0;
+            padding: 0;
+        }
+        .slide-box {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            margin: 10px;
+            min-width: 255px;
+            max-width: 315px;
+            height: 220px;
+            width: 100%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+        }
+        .slide-box img {
+            height: 220px;
+            width: 500px;
+            position: absolute;
+            right: 0;
+            transition: all 1s ease-out;
+        }
+        .slide-box:hover img {
+            transform: translate3d(150px, 0, 0);
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="slide-box">
+        <img src="./img/slide1.jpg" alt="">
+    </div>
+    <div class="slide-box">
+        <img src="./img/slide2.jpg" alt="">
+    </div>
+    <div class="slide-box">
+        <img src="./img/slide3.jpg" alt="">
+    </div>
+</body>
+</html>
