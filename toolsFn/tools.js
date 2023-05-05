@@ -172,3 +172,15 @@ function myAllSettled(lists) {
     })
   })
 }
+
+// 判断是否为异步函数
+const isAsyncFunction = (v) => Object.prototype.toString.call(v) === '[object AsyncFunction]'
+
+// 小数截断 toFixed(0.615, 2) => 0.61
+const toFixed = (n, fixed) => `${n}`.match(new RegExp(`^-?\d+(?:.\d{0,${fixed}})?`))[0]
+
+// 判断对象是否相等
+const isEqual = (...objects) => objects.every(obj => JSON.stringify(obj) === JSON.stringify(objects[0]))
+
+// 生成uuid
+const uuid = (a) => (a ? (a ^ ((Math.random() * 16) >> (a / 4))).toString(16) : ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, uuid))
